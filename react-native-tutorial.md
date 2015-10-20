@@ -1,2 +1,4 @@
-# Chapter 4. Styles
-> It’s great to be able to build functional applications, but if you can’t style them effectively, you won’t get very far! In the second chapter, we built a simple weather application with some basic styles. While this gave us an overview of how to style React Native components, we glossed over many of the details. In this chapter, we will take a closer look at how styles work in React Native. We’ll cover how to create and manage your stylesheets, as well as the details of React Native’s implementation of CSS rules. By the end of this chapter, you should feel comfortable creating and styling your own React Native components and applications.
+# 第四节 样式
+
+> React Native可以创建功能强大的应用，但是如果不能有效的控制样式，你是走不远的。在第二节中，我们创建了一个简单的天气 用，我只了解了给 React Native 组件设置样式的大概情况，并没有深入了解设置样式的更多细节问题。
+在这一章中，我们将深入了解 * 样式 * 在React Native中是如何工作的。本节的内容包括怎么样创建并且管理样式，还有 CSS规则的实现细节。读完本节的内容后，你就可以轻松的给你的组件和应用设置样式了。
