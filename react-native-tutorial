@@ -1,1 +1,2 @@
-# React Native Style
+Chapter 4. Styles
+It’s great to be able to build functional applications, but if you can’t style them effectively, you won’t get very far! In the second chapter, we built a simple weather application with some basic styles. While this gave us an overview of how to style React Native components, we glossed over many of the details. In this chapter, we will take a closer look at how styles work in React Native. We’ll cover how to create and manage your stylesheets, as well as the details of React Native’s implementation of CSS rules. By the end of this chapter, you should feel comfortable creating and styling your own React Native components and applications.
