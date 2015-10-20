@@ -1,1 +1,1 @@
-# git-tips[http://www.baidu.com]
+# [git-tips](http://www.baidu.com)
