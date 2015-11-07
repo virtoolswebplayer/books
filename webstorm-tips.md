@@ -10,8 +10,11 @@ jshint
 
 **向后删除**
 
-1. `fn` + `delete` 向后删除
-2. `delete` 前赂删除
+1. `fn` + `delete` 向后删除一个字符
+2. `delete` 向前删除一个字符
+3. `option` + `delete` 向前删除一个单词(中文词组)
+4. `fn`+`option`+`delete` 向后删除一个单词(中文词组)
+5. `command`+`delete` 删除整行
 
 ### Webstorm菜单快捷键
 `command`+`,` 偏好设置
@@ -46,7 +49,7 @@ jshint
 2. `shift`+`command`+`退格` 返回到最后编辑时光标位置
 3. `command`+`[` 光标向后一个编辑位置
 4. `command`+`]` 光标向前一个编辑位置
-5. `command`+`B`
+5. `command`+`B` 或 `commaond`+`左键`点击 光标定位转到变量/函数 声明处 
 
 ### 重构快捷键
 1. `F5` copy
