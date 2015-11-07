@@ -8,6 +8,11 @@ jshint
 
 ![mac keys](/images/MacKeys.png?raw=true)
 
+**向后删除**
+
+1. `fn` + `delete` 向后删除
+2. `delete` 前赂删除
+
 ### Webstorm菜单快捷键
 `command`+`,` 偏好设置
 
