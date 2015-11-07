@@ -44,25 +44,25 @@ jshint
 5. `command`+`B`
 
 ### 重构快捷键
-`F5` copy
-`F6` Move
-`command`+`退格` 安全删除
-`shift`+`F6` 重命名  可以重构方法名,可以安全重命名文件,也可以重构变量名
-`command`+`F6` 重构方法 可重构函数名称及内参
+1. `F5` copy
+2. `F6` Move
+3. `command`+`退格` 安全删除
+4. `shift`+`F6` 重命名  可以重构方法名,可以安全重命名文件,也可以重构变量名
+5. `command`+`F6` 重构方法 可重构函数名称及内参
 
 ### 查询替换快捷键
 
-`conmmand`+`F`或`R` 在当前文档中查找或替换
-`command`+`shift`+`F`或`R` 在指定目录中查询或替换
-`command`+`G` 查找下一个
-`command`+`shift`+`G` 查下上一个
+1. `conmmand`+`F`或`R` 在当前文档中查找或替换
+2. `command`+`shift`+`F`或`R` 在指定目录中查询或替换
+3. `command`+`G` 查找下一个
+4. `command`+`shift`+`G` 查下上一个
 
 ### 版本控制系统快捷键
 
-`command`+`V` 弹出版本控制主菜单
-`command`+`K` 提交到版本库
-`command`+`T` 从版本库更新
-`option`+`shift`+`C` 查看最近更改的
+1. `command`+`V` 弹出版本控制主菜单
+2. `command`+`K` 提交到版本库
+3. `command`+`T` 从版本库更新
+4. `option`+`shift`+`C` 查看最近更改的
 
 ### 调试快捷键
 
