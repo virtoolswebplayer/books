@@ -4,7 +4,7 @@ cssrecord
 ### 代码质量检查
 jshint
 
-### webstrom快捷键
+### Mac键盘符号说明
 
 ![mac keys](/images/MacKeys.png?raw=true)
 
@@ -66,8 +66,8 @@ jshint
 
 ### 调试快捷键
 
-`F8` 单步调试
-`F7` 单步调试（进入函数）
-`Shift` + `F8` 退出当前函数
+1. `F8` 单步调试
+2. `F7` 单步调试（进入函数）
+3. `Shift` + `F8` 退出当前函数
 
 
