@@ -6,7 +6,10 @@ jshint
 
 ### webstrom快捷键
 
+![mac keys](/images/MacKeys.png?raw=true)
 
+### Webstorm菜单快捷键
+`command`+`,` 偏好设置
 
 ### 多行选择与编辑快捷键
 
