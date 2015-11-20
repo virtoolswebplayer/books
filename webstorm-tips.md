@@ -1,3 +1,9 @@
+### WebStrom 11 下Node和npm配置
+
+> Preferences | Languages & Frameworks | Node.js and npm 
+
+点击 `Enable under Code Assistance`
+
 ### 插件
 cssrecord
 
