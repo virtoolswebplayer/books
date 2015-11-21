@@ -66,6 +66,8 @@ npm insatll lodash # 第二次安装就会从缓存下载了,速度很快
 ### 参考文章
 
 https://www.npmjs.com/package/sinopia
+
 https://www.npmjs.com/package/nrm
+
 https://www.npmjs.com/package/react-native-cli
 
