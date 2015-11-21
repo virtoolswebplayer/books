@@ -20,4 +20,15 @@
   `React Native`组件及`React Web`组件 https://react.parts/native
   
 ### 做自己的npm私有库
+
+### WebStrom下ReactNative的开发环境配置
+
+通过brew 安装`Flow` 和`Watchman`
+```
+brew install flow watchman
+```
+全局安装 `eslint` 
+```
+npm install -g eslint
+```
 [react-style project](https://github.com/js-next/react-style)
