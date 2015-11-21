@@ -1,4 +1,4 @@
-### 搭建本地npm服务器
+### 搭建本地npm镜像服务器
 `Sinopia` 可以创建私有的`npm`注册服务器,利用它你可以你的本机或局域网内的某台服务器上创建属于自己的npm服务器. 它可以缓存已经下载过的`npm`包,当下一次需要这个包时,会自动从本地(或局域网服务器)下载.
 
 #### 安装过程
@@ -42,9 +42,9 @@ uplinks:
 
 2. 全局安装`nrm`—nrm 可以快速修改,切换,增加`npm镜像地址`
 ```
-$ npm install -g nrm
-$ nrm add local http://localhost:4873
-$ nrm use local
+$ npm install -g nrm # 安装nrm
+$ nrm add local http://localhost:4873 # 添加本地的npm镜像地址
+$ nrm use local # 使用本址的镜像地址
 ```
 
 - nrm 的其它命令
@@ -59,8 +59,13 @@ $ nrm use taobao # 使用`淘宝npm`镜像地址
 ```
 mkdir test && cd test
 npm install lodash # sinopia发现本地没有 lodash包,就会从 taobao镜像下载
-rm -rf node-modules
+rm -rf node-modules # 删除目录
 npm insatll lodash # 第二次安装就会从缓存下载了,速度很快
 ```
 
+### 参考文章
+
+https://www.npmjs.com/package/sinopia
+https://www.npmjs.com/package/nrm
+https://www.npmjs.com/package/react-native-cli
 
