@@ -15,7 +15,9 @@
 
   官方最近推出了一个由爱好者自行提交的[showcase](https://facebook.github.io/react-native/showcase.html)页面。
 
-4. 像素比pixradio
+4. 去哪里找RN的组件？
+
+  `React Native`组件及`React Web`组件 https://react.parts/native
   
 
 [react-style project](https://github.com/js-next/react-style)
