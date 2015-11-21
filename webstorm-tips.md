@@ -5,7 +5,10 @@
 点击 `Enable under Code Assistance`
 
 ### 插件
-cssrecord
+- cssrecord
+- [gfm](https://plugins.jetbrains.com/plugin/7701?pr=clion) markdown github同步预览插件（未测试）
+- `Markdown support` 和 `mutiMarkdown` markdown预览和高亮插件（推荐） 
+- [bootstrap3](https://plugins.jetbrains.com/plugin/7572?pr=clion) Bootstrap3模板插件
 
 ### 代码质量检查
 jshint
