@@ -65,6 +65,7 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
 
   ```
 2. 修改`android/app/build.gradle` versionName `1.0`修改为`1.0.0`
+
  ```
  android {
     ...
