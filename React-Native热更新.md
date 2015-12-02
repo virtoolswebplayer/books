@@ -78,8 +78,19 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
 }
  ```
 
-# 安装codepush命令行支持
+# codepush命令行支持
+1. 全局安装 code-push-cli
   
   ```bash
   npm install -g code-push-cli
   ```
+2. 创建Codepush帐号
+
+  ```
+  code-push app add <appName>
+  ```
+3. 发布更新
+
+ ```
+ code-push release <appName> <package> <appStoreVersion>
+ ```
