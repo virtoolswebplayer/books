@@ -87,9 +87,16 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
 2. 创建Codepush帐号
 
   ```
-  code-push app add <appName>
+  code-push app add appName
   ```
 3. 发布更新
+
+```
+react-native bundle --entry-file index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.jsbundle
+
+```
+4. 
+
 
  ```
  code-push release <appName> <package> <appStoreVersion>
