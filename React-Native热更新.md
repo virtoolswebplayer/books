@@ -11,26 +11,26 @@
 
 1. 修改`android/settings.gradle`，添加下面的代码。 `注：这个操作类似于vs的一个解决方案多个子项目`
  
-  ```bash
+```bash
   include ':app', ':react-native-code-push'
   project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
-  ```
+```
 2. 修改`android/app/build.gradle`,把 `:react-native-code-push`项目加入到编译依赖
   
-  ```bash
+```bash
   ...
   dependencies {
       ...
       compile project(':react-native-code-push')
   }
-  ```
+```
 
 ## 插件配置 Android
 经过上面的步骤就完成了CodePush插件的安装，接下来需要配置CodePush以实现重新定位`index.android.bundle`
 
 1. 修改`MainAcivity.java`让CodePush起作用
   
-  ```java
+```java
   ...
 // 1. 引用CodePush
 import com.microsoft.codepush.react.CodePush;
@@ -63,36 +63,37 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
     }
 }
 
-  ```
+```
 2. 修改`android/app/build.gradle` versionName `1.0`修改为`1.0.0`
 
- ```
- android {
+```
+android {
+...
+defaultConfig {
     ...
-    defaultConfig {
-        ...
-        versionName "1.0.0"
-        ...
-    }
+    versionName "1.0.0"
     ...
 }
- ```
+...
+}
+```
 
 # codepush命令行支持
 1. 全局安装 code-push-cli
   
-  ```bash
-  npm install -g code-push-cli
-  ```
+```bash
+npm install -g code-push-cli
+```
 2. 创建Codepush帐号
 
-  ```
-  code-push app add appName
-  ```
+```
+code-push app add appName
+```
 3. 添加一个应用
-  ```
+
+```
   code-push app add appName
-  ```
+```
 4. 打包bundle
 
 ```sh
@@ -121,9 +122,9 @@ code-push release wealth  ./release 1.0.0
 5. 发布到codepush
 
 `特别提醒:` 最后的版本号一定要于 android工程及ios工程中设置的版本号保持一致,因为codepush不会跨软件版本号更新
- ```
- code-push release MyApp android/app/src/main/assets/index.android.jsbundle 1.0.1
- ```
+```
+code-push release MyApp android/app/src/main/assets/index.android.jsbundle 1.0.1
+```
 
 # 插件安装(IOS)
 1. 用xcode打开你的ios工程
