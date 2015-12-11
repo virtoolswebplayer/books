@@ -89,15 +89,64 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
   ```
   code-push app add appName
   ```
-3. 发布更新
+3. 添加一个应用
+  ```
+  code-push app add appName
+  ```
+4. 打包bundle
 
+```sh
+#!/usr/bin/env bash
+
+# bundle.sh 需要给执行权限 chmod +x bundle.sh
+
+# android
+react-native bundle \
+--platform android \
+--entry-file index.android.js \
+--bundle-output ./release/index.android.jsbundle \
+--assets-dest ./release
+
+# ios
+react-native bundle \
+--platform ios \
+--entry-file index.ios.js \
+--bundle-output ./release/main.jsbundle \
+--assets-dest ./release
+
+# 发布到codepush服务器
+#
+code-push release wealth  ./release 1.0.0
 ```
-react-native bundle --entry-file index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.jsbundle
+5. 发布到codepush
 
-```
-4. 
-
-
+`特别提醒:` 最后的版本号一定要于 android工程及ios工程中设置的版本号保持一致,因为codepush不会跨软件版本号更新
  ```
- code-push release <appName> <package> <appStoreVersion>
+ code-push release MyApp android/app/src/main/assets/index.android.jsbundle 1.0.1
  ```
+
+# 插件安装(IOS)
+1. 用xcode打开你的ios工程
+2. 找到`CodePush.xcodeproj`,具体路径`node_modules/react-native-code-push`,将其拖拽到`Libraries`下
+3. 选中`Build Phases`
+4. 将`Libraries.CodePush.xcodeproj/Products`目录下的`libCodePush.a`拖拽到`Link Binary With Libraries`
+5. 展开`Link Binary With Libraries` ,点击`+`按钮,选中`libz.tbd`后点击`Add`
+6. 项目配置中的`Build Setting`标签,找到`Head Search Paths`编辑它的值,新加一个值`$(SRCROOT)/../node_modules/react-native-code-push`,从下拉里选择`recursive`
+
+# 插件配置(IOS)
+1. 编辑 `AppDelegate.m`,导入`CodePush.h`
+
+    ```
+    #import "CodePush.h"
+    ```
+2. 找到下面的代码断
+
+    ```
+    jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+    ```
+3. 替换为
+
+    ```js
+    jsCodeLocation = [CodePush bundleURL];
+    ```
+通过以上配置使你的apps总是加载最新版的`bundle`,第一次启动应用时,
