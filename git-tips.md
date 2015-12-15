@@ -29,3 +29,20 @@ git 使用技巧
   # push到远桌
   git push
   ```
+  
+# 提交大文件时，本地缓冲不够的解决办法
+
+错误信息：
+
+```
+error: RPC failed; result=22, HTTP code = 500
+fatal: The remote end hung up unexpectedly
+fatal: The remote end hung up unexpectedly
+```
+
+解决方法：
+
+```
+git config http.postBuffer  524288000
+```
+
