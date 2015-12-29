@@ -70,3 +70,20 @@ git stash apply stash@{num}
 
 利用这两个命令，我们可以很好的管理我们的MySQL开发。我们只有一个master分支作为主干，不允许在主干上直接开发。每个同学根据feature和bug的issue建立分支，然后在分支上开发，不管开发过程中有多少个commit，我们要求最终提交每个bugfix或feature只能有一个提交。因此每个同学完成开发后，都需要git reset 退到最早的commit，git stash save宝存一下自己的修改，然后git checkout master; git pull拖一下最新的主干，然后返回自己的分支，再做git rebase master，把当前分支推进到主干，最后git stash pop弹出修改，有冲突则在当前分支解决，再git push。
 
+#【远程代码库回滚】：
+
+这个是重点要说的内容，过程比本地回滚要复杂
+应用场景：自动部署系统发布后发现问题，需要回滚到某一个commit，再重新发布
+原理：先将本地分支退回到某个commit，删除远程分支，再重新push本地分支
+
+操作步骤：
+1、git checkout the_branch
+2、git pull
+3、git branch the_branch_backup //备份一下这个分支当前的情况
+4、git reset --hard the_commit_id //把the_branch本地回滚到the_commit_id
+5、git push origin :the_branch //删除远程 the_branch (注意the_branch前有个:)
+6、git push origin the_branch //用回滚后的本地分支重新建立远程分支
+7、git push origin :the_branch_backup //如果前面都成功了，删除这个备份分支,(远程无此分支，只需删除本地分支)
+
+如果使用了gerrit做远程代码中心库和code review平台，需要确保操作git的用户具备分支的push权限，并且选择了 Force Push选项（在push权限设置里有这个选项）
+另外，gerrit中心库是个bare库，将HEAD默认指向了master，因此master分支是不能进行删除操作的，最好不要选择删除master分支的策略，换用其他分支。如果一定要这样做，可以考虑到gerrit服务器上修改HEAD指针。。。不建议这样搞
