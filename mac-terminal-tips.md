@@ -31,3 +31,13 @@ if [ -f ~/.bashrc ]; then
 fi
 ```
 所以登陆的时候也会执行到.bashrc里面的命令。
+
+### 移动文件夹
+在终端中
+
+```
+mv filename targetPath
+```
+在finder中
+
+*Command + C* 复制，在目标文件夹中 按下 *Command + option +V* 
