@@ -23,16 +23,16 @@ npm i react-native-router-flux --save
     * import {Actions} from 'react-native-router-flux'
     * Actions.ACTION_NAME(PARAMS) will call appropriate action and params will be passed to the route
 
-## Configuration
+## 配置
 
-##### Router:
+##### Router(路由器):
 | Property | Type | Default | Description |
 |---------------|----------|--------------|----------------------------------------------------------------|
 | header | object | null | optional header view |
 | footer | object | null | optional footer view (e.g. tab bar) |
 | hideNavBar | bool | false | hides navigation bar for every route |
 
-##### Route:
+##### Route（路由）:
 
 | Property | Type | Default | Description |
 |-----------|--------|---------|--------------------------------------------|
