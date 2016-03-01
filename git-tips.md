@@ -89,3 +89,23 @@ git stash apply stash@{num}
 如果使用了gerrit做远程代码中心库和code review平台，需要确保操作git的用户具备分支的push权限，并且选择了 Force Push选项（在push权限设置里有这个选项）
 
 另外，gerrit中心库是个bare库，将HEAD默认指向了master，因此master分支是不能进行删除操作的，最好不要选择删除master分支的策略，换用其他分支。如果一定要这样做，可以考虑到gerrit服务器上修改HEAD指针。。。不建议这样搞
+
+# git reset head --hard 之后如何恢复
+如果你不小心git reset head --hard 不小心丢失了一些commit，或者删除了一个些不想删除的文件，可以使用下的方法恢复
+
+```shell
+git reflog
+
+header:
+643460d HEAD@{0}: commit: 删除code-push-server ,将做为一个独立仓库进行管理
+bd81a04 HEAD@{1}: merge origin/develop: Merge made by the 'recursive' strategy.
+a8e3d00 HEAD@{2}: reset: moving to a8e3d00
+918472f HEAD@{3}: reset: moving to 918472fe0583123a46de9977efc03e4a16cda536
+57dbcfa HEAD@{4}: pull --progress --no-stat -v --progress origin develop: Merge made by the 'recursive' strategy.
+a8e3d00 HEAD@{5}: commit: eslint 忽略 code-push-server
+580f6bc HEAD@{6}: commit: code-push-server 功能完善
+25b971c HEAD@{7}: commit: 实现一个本地的 code-push-server 服务
+ee7f149 HEAD@{8}: commit: 更新 readme
+
+git reset 643460d --hard 
+```
