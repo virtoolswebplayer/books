@@ -3,10 +3,13 @@
 Router for React Native based on [exNavigator](https://github.com/exponentjs/ex-navigator)
 
 ## 特点
-- 统一在一个位置定义"routes"(路由)和animation transitions（过度动画）
-- 可以在任何地方切换路由 (比如 `Actions.login`)
-- Eliminates the need to pass navigator objects to your screens
-- 使用 `Schema` 为一组页面定义通用属性. 例如, 定义一个模态弹出层 "modal" `Schema` for screens that animate from the bottom of the screen.
+- 所有"Screen"(routes)(路由)和animation transitions（过度动画）统一在一个文件中定义 例如 app.js
+- 可以在任何地方切换路由 (比如: 可以在任意组件中 import {Actions} from 'react-native-router-flux';  `Actions.login`)
+- 无需将navigator对象传递给你的组件
+- 使用 `Schema` 为一组"screen"定义通用属性. 例如, 定义一个从底部弹出的screen  
+   ```
+      <Schema name="modal" sceneConfig={Navigator.SceneConfigs.FloatFromBottom}/>
+   ```
 - 可以控制 navigate bar(导航条)的 显示和隐藏  (see limitations)
 - 支持管理 tab bar（选项卡工具条）, using [react-native-tabs](https://github.com/aksonov/react-native-tabs) (see demo)
 - 支持嵌套导航. 例如, 每个选项卡都可以有自己的导航器, 嵌套在root navigator(根导航器). 过场动画会自动继承自上一级的导航器
@@ -21,24 +24,24 @@ npm i react-native-router-flux --save
     * 如果你的页面具有一些通用的属性, 最好定义一个 `Schema` 元素，可以减入重复定义
 2. 在任何页面中:
     * import {Actions} from 'react-native-router-flux'
-    * Actions.ACTION_NAME(PARAMS) will call appropriate action and params will be passed to the route
+    * Actions.ACTION_NAME(PARAMS) 会根据你指定的方式传递相应的action和参数给路由
 
 ## 配置
 
 ##### Router(路由器):
-| Property | Type | Default | Description |
+| 属性 | 类型 | 默认 | 说明 |
 |---------------|----------|--------------|----------------------------------------------------------------|
-| header | object | null | optional header view |
-| footer | object | null | optional footer view (e.g. tab bar) |
-| hideNavBar | bool | false | hides navigation bar for every route |
+| header | object | null | 可选的 头部视图|
+| footer | object | null | 可选的 底部视图 (比如. (tab bar)选项卡工具条) |
+| hideNavBar | bool | false | 在所有路由状态下隐藏(navigate bar)导航条 |
 
 ##### Route（路由）:
 
-| Property | Type | Default | Description |
+| 属性 | 类型 | 默认 | 说明 |
 |-----------|--------|---------|--------------------------------------------|
-| name | string | required | Will be used to call screen transition, for example, `Actions.name(params)`. Must be unique. |
-| component | React.Component | semi-required | The `Component` to be displayed. Not required when defining a nested `Router` or child, see example |
-| type | string | optional | Defines how the new screen is added to the navigator stack. One of `push`, `modal`,`actionSheet`,`replace`, `switch`, `reset`.  Default is 'push'. `replace` tells navigator to replace current route with new route. `actionSheet` shows Action Sheet popup, you must pass callback as callback function, check Example for details. `modal` type inserts its 'component' after navigator component. It could be used for popup alerts as well for various needed processes before any navigator transitions (like login auth process).``switch` is used for tab screens. `reset` is similar to replace except it unmounts the componets in the navigator stack. `modal` component could be dismissed by using Actions.dismiss() |
+| name | string | required | 路由名称,必须是唯一的。 例如： `Actions.name(params)` |
+| component | React.Component | semi-required | 要显示的`Component`组件 . 当定义嵌套路由时不需要填写 `Router` or chilid, |
+| type | string | optional | 定义该路由入路由堆(router stack)的方式. One of `push`, `modal`,`actionSheet`,`replace`, `switch`, `reset`.  默认是 'push'. `replace` 告诉导航器用新路由替换现在的路由 `actionSheet` 显示一个弹出式命令菜单, 你必须传递一个回调函数来处理相应的命令, check Example for details. `modal` 类型会在 navigator组件之后插入一个'component'. 可以用作弹出警告框或对话框 (比如登陆处理).``switch` 用于选项卡(tab screen). `reset` is similar to replace except it unmounts the componets in the navigator stack. `modal` component could be dismissed by using Actions.dismiss() |
 | initial | bool | false | Set to `true` if this is the initial screen |
 | title | string | null | The title to be displayed in the navigation bar |
 | schema | string | optional | Set this property to the name of a previously defined `Schema` to inherit its properties |
