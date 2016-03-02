@@ -42,20 +42,20 @@ npm i react-native-router-flux --save
 | name | string | required | 路由名称,必须是唯一的。 例如： `Actions.name(params)` |
 | component | React.Component | semi-required | 要显示的`Component`组件 . 当定义嵌套路由时不需要填写 `Router` or chilid, |
 | type | string | optional | 定义该路由入路由堆(router stack)的方式. One of `push`, `modal`,`actionSheet`,`replace`, `switch`, `reset`.  默认是 'push'. `replace` 告诉导航器用新路由替换现在的路由 `actionSheet` 显示一个弹出式命令菜单, 你必须传递一个回调函数来处理相应的命令, check Example for details. `modal` 类型会在 navigator组件之后插入一个'component'. 可以用作弹出警告框或对话框 (比如登陆处理).``switch` 用于选项卡(tab screen). `reset` is similar to replace except it unmounts the componets in the navigator stack. `modal` component could be dismissed by using Actions.dismiss() |
-| initial | bool | false | Set to `true` if this is the initial screen |
-| title | string | null | The title to be displayed in the navigation bar |
+| initial | bool | false | 如果默认显示 设置为 `true`  |
+| title | string | null | 在导航栏上显示的标题文字 |
 | schema | string | optional | Set this property to the name of a previously defined `Schema` to inherit its properties |
-| wrapRouter | bool | false | If `true`, the route is automatically nested in its own `Router`. Useful for modal screens. For type==switch wrapRouter will be true|
-| sceneConfig | Navigator.SceneConfigs | optional | Defines the transition animation.  |
+| wrapRouter | bool | false | 如果为 `true`, 路由会自动嵌套在它的父 `Router`. 做模态对手框时非常有用. 如果 type==switch wrapRouter 默认为 true|
+| sceneConfig | Navigator.SceneConfigs | optional | 定义屏幕过滤动画  |
 | defaultRoute | string | optional | Defines which route to go to if this route is used as a tab and the tab is clicked on when the tab is already selected |
-| hideNavBar | bool | false | hides navigation bar for this route |
-| hideTabBar | bool | false | hides tab bar for this route (if built-in TabBar component is used as footer for parent Router, check Example)|
-| navigationBarStyle | View style |  | optional style override for the navigation bar |
-| titleStyle | Text style |  | optional style override for the title element |
-| renderTitle | Closure | | optional closure to render the title element |
+| hideNavBar | bool | false | 当前路由是否隐藏导航条 |
+| hideTabBar | bool | false | 是否隐藏选项卡 (如果父`router` 的`footer` 使用了内置的`Tabbar`组件)|
+| navigationBarStyle | View style |  | 可选的 导航条样式，如果设置会替换默认样式 |
+| titleStyle | Text style |  | 可选的 标题元素样式替换默认样式 |
+| renderTitle | Closure | | 可选的 闭包函数返回一个标题组件替换默认标题组件 |
 | barButtonIconStyle | Image style |  | optional style override for icon buttons (e.g. back icon) |
 | leftTitle | string | | optional string to display on the left if the previous route does not provide `renderBackButton` prop. `renderBackButton` > `leftTitle` > <previous route's `title`> |
-| renderLeftButton | Closure | | optional closure to render the left title / buttons element |
+| renderLeftButton | Closure | | 可选的 闭包函数 返回一个组件替换 左标题/按钮元素 |
 | renderBackButton | Closure | | optional closure to render back text or button if this route happens to be the previous route |
 | leftButtonStyle | View style | | optional style override for the container of left title / buttons |
 | leftButtonTextStyle | Text style | | optional style override for the left title element |
@@ -72,7 +72,7 @@ npm i react-native-router-flux --save
 | property | - |  - | A `Schema` can have any property that you want the `Route` to inherit  |
 
 
-## Example
+## 例子
 ![launch](https://cloud.githubusercontent.com/assets/1321329/11692367/7337cfe2-9e9f-11e5-8515-e8b7a9f230ec.gif)
 
 ```javascript
@@ -173,7 +173,7 @@ var styles = StyleSheet.create({
 module.exports = Launch;
 ```
 
-## Modals
+## 模态框
 To display a modal use ```type="modal"``` for your route components.
 Modal type inserts its 'component' after navigator component. See the ```Examples``` folder for more details.
 
@@ -280,7 +280,7 @@ export default class Routes extends React.Component {
 }
 ```
 
-## Redux/Flux support
+## Redux/Flux 支持
 This component is not opinionated and does not depend on any implementation of Flux or Redux, but you can easily connect it to them.
 
 If 'dispatch' prop is passed to the router, it will be called with current route as `route`, `name` as route name and all route props, check Example for more details.
@@ -340,8 +340,8 @@ If `global.currentRoute` is `payment` and the previous `global.currentRoute` was
 ```
 P.S.: Remember to check `currentRoute === 'payment'`, otherwise you'll start doSomething() on every route change!  
 
-## Limitations
-### Nested Routers
+## 限制
+### 嵌套路由
 * If you are using a tab bar where each tab has its own `Router`, modal screens will have to be presented from the root navigator in order to cover the tab bar. To do this, the modal screen should be defined in the root router, and should have the `wrapRouter={true}` property as in the example below.
 ```
         <Router>
