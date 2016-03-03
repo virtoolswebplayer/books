@@ -1,4 +1,4 @@
-### ExNavigator 提供的方法
+### Navigator 提供的方法
 |Navigator| ExNavigator
 |--------|:-------------:|
 | `getCurrentRoutes()`  | 返回路由列表
@@ -33,4 +33,26 @@
     let routes = this.getCurrentRoutes();
     this.popToRoute(routes[routes.length - n - 1]);
   }
+```
+
+### Navigator的属性
+```js
+    configureScene: PropTypes.func,
+    renderScene: PropTypes.func.isRequired,
+    initialRoute: PropTypes.object,
+    initialRouteStack: PropTypes.arrayOf(PropTypes.object),
+    navigationBar: PropTypes.node,
+    navigator: PropTypes.object,
+    sceneStyle: View.propTypes.style,
+```
+### ExNavigator 增加的属性
+```js
+    showNavigationBar: PropTypes.bool,
+    navigationBarStyle: View.propTypes.style,
+    titleStyle: Text.propTypes.style,
+    barButtonTextStyle: Text.propTypes.style,
+    barButtonIconStyle: Image.propTypes.style,
+    renderNavigationBar: PropTypes.func,
+    renderBackButton: PropTypes.func,
+    augmentScene: PropTypes.func,
 ```
