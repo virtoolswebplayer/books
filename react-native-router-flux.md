@@ -46,23 +46,23 @@ npm i react-native-router-flux --save
 | title | string | null | 在导航栏上显示的标题文字 |
 | schema | string | optional | Set this property to the name of a previously defined `Schema` to inherit its properties |
 | wrapRouter | bool | false | 如果为 `true`, 路由会自动嵌套在它的父 `Router`. 做模态对手框时非常有用. 如果 type==switch wrapRouter 默认为 true|
-| sceneConfig | Navigator.SceneConfigs | optional | 定义屏幕过滤动画  |
+| sceneConfig | Navigator.SceneConfigs | optional | 定义屏幕过场动画  |
 | defaultRoute | string | optional | Defines which route to go to if this route is used as a tab and the tab is clicked on when the tab is already selected |
 | hideNavBar | bool | false | 当前路由是否隐藏导航条 |
 | hideTabBar | bool | false | 是否隐藏选项卡 (如果父`router` 的`footer` 使用了内置的`Tabbar`组件)|
 | navigationBarStyle | View style |  | 可选的 导航条样式，如果设置会替换默认样式 |
 | titleStyle | Text style |  | 可选的 标题元素样式替换默认样式 |
 | renderTitle | Closure | | 可选的 闭包函数返回一个标题组件替换默认标题组件 |
-| barButtonIconStyle | Image style |  | optional style override for icon buttons (e.g. back icon) |
-| leftTitle | string | | optional string to display on the left if the previous route does not provide `renderBackButton` prop. `renderBackButton` > `leftTitle` > <previous route's `title`> |
+| barButtonIconStyle | Image style |  | 可选的 图标按钮的样式替换默认样式 (比如. 返回图标) |
+| leftTitle | string | | 可选的 在导航条的左侧显示的文字，如果前面的路由未设置 `renderBackButton` 属性. `renderBackButton` > `leftTitle` > <上一个路由的 `title`> |
 | renderLeftButton | Closure | | 可选的 闭包函数 返回一个组件替换 左标题/按钮元素 |
-| renderBackButton | Closure | | optional closure to render back text or button if this route happens to be the previous route |
-| leftButtonStyle | View style | | optional style override for the container of left title / buttons |
-| leftButtonTextStyle | Text style | | optional style override for the left title element |
-| rightTitle | string | | optional string to display on the right. `onRight` must be provided for this to appear. |
-| renderRightButton | Closure | | optional closure to render the right title / buttons element |
-| rightButtonStyle | View style | | optional style override for the container of right title / buttons |
-| rightButtonTextStyle | Text style | | optional style override for the right title element |
+| renderBackButton | Closure | | 可选的 闭包函数 返回一个‘返回’文字或按钮如果路由状态改变，如从上一个路由切换到当前路由 |
+| leftButtonStyle | View style | | 可选的 包含左侧标题及按钮的容器的样式覆盖默认样式 |
+| leftButtonTextStyle | Text style | | 可选的 左标题的样式 |
+| rightTitle | string | | 可选的 显示在右边的文字. `onRight` must be provided for this to appear. |
+| renderRightButton | Closure | | 可选的 闭包函数返回右侧标题或按钮元素|
+| rightButtonStyle | View style | | 可选的 包含右侧标题及按钮的容器的样式覆盖默认样式 |
+| rightButtonTextStyle | Text style | | 可选的 导航条右侧文字的样式 |
 
 ##### Schema:
 
