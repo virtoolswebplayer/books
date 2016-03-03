@@ -15,7 +15,7 @@
 | `popToTop()`          | Pop to the first scene in the stack, unmounting every other scene
 
 ### ExNavigator 增加的方法
-
+```js
   /**
    * Replaces the top-most route with the given route and navigates to it
    * with a pop transition
@@ -31,4 +31,5 @@
   popBack(n) {
     let routes = this.getCurrentRoutes();
     this.popToRoute(routes[routes.length - n - 1]);
-  },
+  }
+```
