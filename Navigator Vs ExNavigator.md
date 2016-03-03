@@ -1,14 +1,15 @@
+### ExNavigator 提供的方法
 |Navigator| ExNavigator
 |--------|:-------------:|
-| `getCurrentRoutes()`  | returns the current list of routes
-| `jumpBack()`          | Jump backward without unmounting the current scene
-| `jumpForward()`       | Jump forward to the next scene in the route stack
-| `jumpTo(route)`       | Transition to an existing scene without unmounting
+| `getCurrentRoutes()`  | 返回路由列表
+| `jumpBack()`          | 不卸载当前场景转到后一个场景he current scene
+| `jumpForward()`       | 不卸载当前场景转到路由堆中的前一个场景
+| `jumpTo(route)`       | 不卸载当前场景转到路由堆中存在的指定的场景
 | `push(route)`         | Navigate forward to a new scene, squashing any scenes that you could `jumpForward` to
-| `pop()`               | Transition back and unmount the current scene
-| `replace(route)`      | Replace the current scene with a new route
-| `replaceAtIndex(route, index)` | Replace a scene as specified by an index
-| `replacePrevious(route)` | Replace the previous scene
+| `pop()`               | 后退场景并卸载当前场景
+| `replace(route)`      | 用指定的路由替换当前场景
+| `replaceAtIndex(route, index)` | 用给定的路由替换路由中指定的场景
+| `replacePrevious(route)` | 替换前一个场景
 | `resetTo(route)`      | Navigate to a new scene and reset route stack
 | `immediatelyResetRouteStack(routeStack)` | Reset every scene with anarray of routes
 | `popToRoute(route)`   | Pop to a particular scene, as specified by its route. All scenes after it will be unmounted
