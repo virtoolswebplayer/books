@@ -1,14 +1,13 @@
 # ExNavigator [![Slack](http://slack.exponentjs.com/badge.svg)](http://slack.exponentjs.com)
 
-ExNavigator是基于Navigator实现的一个场景导航器,它是一个路由控制中心，. You define ExRoutes, which are 纯javascript对象 with functions to render the scene for the route and the components to display in the nav bar.
+ExNavigator是基于Navigator实现的一个场景导航器,它是一个路由控制中心。定义路由就是一个纯javascript对象，这个javascript对象定义了路由的渲染方式，以及该路由在导航条上的显示方式等等。
 
 The API is in ExRoute.js and ExRouteRenderer.js.
 
 ExNavigator 和 Navigator 十分相似
 
 ## 为什么?
-[这篇文章](https://medium.com/the-exponent-log/routing-and-navigation-in-react-native-6b27bee39603#.13j2waolq) explains the ideas that are in ExNavigator and how we use it so you can assess whether it is useful for your project, too.
-
+[这篇文章](https://medium.com/the-exponent-log/routing-and-navigation-in-react-native-6b27bee39603#.13j2waolq) 解释了ExNavigator的构建思想及使用方法，你可以评估一下ExNavigator对你的是项目是否也有用。
 ## 安装
 
 ```
