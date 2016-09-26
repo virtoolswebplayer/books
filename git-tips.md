@@ -109,3 +109,9 @@ ee7f149 HEAD@{8}: commit: 更新 readme
 
 git reset 643460d --hard 
 ```
+
+# git 创建一个空的分支
+```
+$ git checkout --orphan gh-pages
+# 创建一个orphan的分支，这个分支是独立的
+```
